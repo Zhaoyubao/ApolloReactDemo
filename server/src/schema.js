@@ -12,11 +12,11 @@ export const typeDefs = gql`
         "The task's priority"
         priority: String
         "The task's assignee"
-        assignee: Assignee,
-        assignees: [Assignee!]!
+        assignee: Account,
+        assignees: [Account!]!
     }
 
-    type Assignee {
+    type Account {
         id: Int!
         first_name: String
         last_name: String
@@ -26,7 +26,7 @@ export const typeDefs = gql`
         status: String
         type: String
         priority: String
-        assigneeId: Int
+        accountId: Int
     }
 
     type Query {
@@ -34,7 +34,8 @@ export const typeDefs = gql`
         tasks: [Task!]! 
         "Get a single task by taskId"
         task(id: Int!): Task
-        assignees: [Assignee!]!
+        "Get all accounts"
+        accounts: [Account!]!
     }
 
     type Mutation {

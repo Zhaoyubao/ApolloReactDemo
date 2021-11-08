@@ -4,7 +4,7 @@ const TASKS = [
         status: 'TODO',
         type: 'CLEANING',
         priority: 'MEDIUM',
-        assigneeId: 3,
+        accountId: 3,
         companyId: 2
     },
     {
@@ -12,7 +12,7 @@ const TASKS = [
         status: 'COMPLETED',
         type: 'CHECKOUT',
         priority: 'HIGH',
-        assigneeId: 1,
+        accountId: 1,
         companyId: 1
     },
     {
@@ -20,12 +20,12 @@ const TASKS = [
         status: 'INPROGRESS',
         type: 'CHECKIN',
         priority: 'LOW',
-        assigneeId: 2,
+        accountId: 2,
         companyId: 1
     }
 ];
 
-const ASSIGNEES = [
+const ACCOUNTS = [
     {
         id: 1,
         first_name: 'WEI',
@@ -52,4 +52,4 @@ const ASSIGNEES = [
     }
 ];
 
-export { TASKS, ASSIGNEES }; 
+export { TASKS, ACCOUNTS }; 

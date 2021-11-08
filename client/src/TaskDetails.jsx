@@ -11,7 +11,7 @@ const TaskDetails = () => {
   const [mutate] = useMutation(UPDATE_TASK, {
     onCompleted: ({updateTask}) => console.log('Mutation Result:', updateTask)
   });
-  console.log('TaskDetail Component');
+  
   if (loading) return 'Loading...';
   if (error) return `Error! ${error.message}`; 
 
@@ -24,7 +24,7 @@ const TaskDetails = () => {
           variables: {
             taskId: +taskId,
             taskInput: {
-              [field]: field === 'assigneeId' ? +value : value
+              [field]: field === 'accountId' ? +value : value
             }
           }
         };
@@ -47,7 +47,7 @@ const TaskDetails = () => {
           </p>
           <p>
             <label>Assignee: </label>
-            <select value={assignee.id} onChange={handleChange('assigneeId')}>
+            <select value={assignee.id} onChange={handleChange('accountId')}>
               {assignees.map( ({id, first_name, last_name}) => 
                 <option key={id} value={id}>{`${first_name} ${last_name}`}</option>
               )}

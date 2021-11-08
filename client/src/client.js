@@ -41,16 +41,18 @@ export const GET_TASK_DETAILS = gql`
             type
             priority
             assignee {
-                id
-                first_name
-                last_name
+                ...accountFields
             }
             assignees {
-                id
-                first_name
-                last_name
+                ...accountFields
             }
         }
+    }
+
+    fragment accountFields on Account {
+        id
+        first_name
+        last_name
     }
 `;
 export const UPDATE_TASK = gql`
@@ -61,8 +63,6 @@ export const UPDATE_TASK = gql`
             priority
             assignee {
                 id
-                first_name
-                last_name
             }
         }
     }

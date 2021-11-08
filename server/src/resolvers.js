@@ -1,10 +1,10 @@
-import { TASKS, ASSIGNEES } from './mocks.js';
+import { TASKS, ACCOUNTS } from './mocks.js';
 
 export const resolvers = {
     Query: {
         tasks: () => TASKS,
         task: (_, args) => TASKS.find(task => task.id === args.id),
-        assignees: () => ASSIGNEES
+        accounts: () => ACCOUNTS
     },
     Mutation: {
         updateTask(_, args) {
@@ -13,7 +13,7 @@ export const resolvers = {
         }
     },
     Task: {
-        assignee: (task) => ASSIGNEES.find(assignee => assignee.id === task.assigneeId),
-        assignees: (task) => ASSIGNEES.filter(assignee => assignee.companyId === task.companyId)
+        assignee: (task) => ACCOUNTS.find(assignee => assignee.id === task.accountId),
+        assignees: (task) => ACCOUNTS.filter(assignee => assignee.companyId === task.companyId)
     }
 };
