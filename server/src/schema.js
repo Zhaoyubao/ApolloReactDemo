@@ -24,7 +24,6 @@ export const typeDefs = gql`
 
     input TaskInput {
         status: String
-        type: String
         priority: String
         accountId: Int
     }

@@ -20,18 +20,24 @@ export const client = new ApolloClient({
     cache: new InMemoryCache()
 });
 
+const accountFragment = gql`
+    fragment accountFields on Account {
+        id
+        first_name
+        last_name
+    }
+`; 
 export const GET_TASKS = gql`
     query GetTasks {
         tasks {
             id
             status
             assignee {
-                id
-                first_name
-                last_name
+               ...accountFields
             }
         }
-    } 
+    }
+    ${accountFragment}
 `;
 export const GET_TASK_DETAILS = gql`
     query TaskDetails($taskId: Int!) {
@@ -48,12 +54,7 @@ export const GET_TASK_DETAILS = gql`
             }
         }
     }
-
-    fragment accountFields on Account {
-        id
-        first_name
-        last_name
-    }
+    ${accountFragment}
 `;
 export const UPDATE_TASK = gql`
     mutation UpdateTask($taskId: Int!, $taskInput: TaskInput!) {
