@@ -25,7 +25,7 @@ export const typeDefs = gql`
     input TaskInput {
         status: String
         priority: String
-        accountId: Int
+        assigneeId: Int
     }
 
     type Query {

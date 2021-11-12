@@ -13,7 +13,7 @@ export const resolvers = {
         }
     },
     Task: {
-        assignee: (task) => ACCOUNTS.find(assignee => assignee.id === task.accountId),
+        assignee: (task) => ACCOUNTS.find(assignee => assignee.id === task.assigneeId),
         assignees: (task) => ACCOUNTS.filter(assignee => assignee.companyId === task.companyId)
     }
 };

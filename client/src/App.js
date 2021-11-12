@@ -7,6 +7,7 @@ function App() {
 
   return (
     <div className="App">
+      <h2>Task Board</h2>
       <Routes>
         <Route path="/" element={<TaskList />} />
         <Route path="/task/:taskId" element={<TaskDetails />} />

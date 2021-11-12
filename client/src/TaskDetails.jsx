@@ -1,10 +1,10 @@
 import { Link, useParams } from "react-router-dom";
 import { useQuery, useMutation } from '@apollo/client';
-import { GET_TASK_DETAILS, UPDATE_TASK } from './client';
+import { GET_TASK, UPDATE_TASK } from './client';
 
 const TaskDetails = () => {
   const { taskId } = useParams();
-  const { loading, error, data } = useQuery(GET_TASK_DETAILS, {
+  const { loading, error, data } = useQuery(GET_TASK, {
     variables: {taskId: +taskId},
     onCompleted: ({task}) => console.log('Query Result:', task)
   });
@@ -24,7 +24,7 @@ const TaskDetails = () => {
           variables: {
             taskId: +taskId,
             taskInput: {
-              [field]: field === 'accountId' ? +value : value
+              [field]: field === 'assigneeId' ? +value : value
             }
           }
         };
@@ -47,7 +47,7 @@ const TaskDetails = () => {
           </p>
           <p>
             <label>Assignee: </label>
-            <select value={assignee.id} onChange={handleChange('accountId')}>
+            <select value={assignee.id} onChange={handleChange('assigneeId')}>
               {assignees.map( ({id, first_name, last_name}) => 
                 <option key={id} value={id}>{`${first_name} ${last_name}`}</option>
               )}

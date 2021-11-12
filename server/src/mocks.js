@@ -4,7 +4,7 @@ const TASKS = [
         status: 'TODO',
         type: 'CLEANING',
         priority: 'MEDIUM',
-        accountId: 3,
+        assigneeId: 3,
         companyId: 2
     },
     {
@@ -12,7 +12,7 @@ const TASKS = [
         status: 'COMPLETED',
         type: 'CHECKOUT',
         priority: 'HIGH',
-        accountId: 1,
+        assigneeId: 1,
         companyId: 1
     },
     {
@@ -20,7 +20,7 @@ const TASKS = [
         status: 'INPROGRESS',
         type: 'CHECKIN',
         priority: 'LOW',
-        accountId: 2,
+        assigneeId: 2,
         companyId: 1
     }
 ];
