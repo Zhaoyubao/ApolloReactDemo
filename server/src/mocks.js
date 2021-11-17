@@ -7,7 +7,7 @@ const TASKS = [
         todo_date: '2021-11-20 13:00:00',
         notes: '',
         assignee_id: 3,
-        company_id: 2,
+        company_id: 1,
         order_id: 1,
     },
     {
