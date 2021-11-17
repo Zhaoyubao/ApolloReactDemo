@@ -7,7 +7,7 @@ export const resolvers = {
         accounts: () => ACCOUNTS,
     },
     Mutation: {
-        updateTask(_, args) {
+        update_task(_, args) {
             const {id, ...input} = args.input;
             const task = TASKS.find(task => task.id === id);
             return Object.assign(task, input);
