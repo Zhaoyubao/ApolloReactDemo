@@ -7,7 +7,7 @@ const TASKS = [
         todo_date: '2021-11-20 13:00:00',
         notes: '',
         assignee_id: 3,
-        company_id: 1,
+        company_id: 2,
         order_id: 1,
     },
     {
@@ -80,6 +80,13 @@ const COMPANYS = [
         phone_number: '1234567890',
         email: 'company1@gmail.com',
         cleaning_rules: 'All bed sheets should be replaced, the floor ......'
+    },
+    {
+        id: 2,
+        company_name: 'Company2',
+        phone_number: '1234567890',
+        email: 'company2@gmail.com',
+        cleaning_rules: 'All bed sheets should be replaced......'
     },
 ];
 
