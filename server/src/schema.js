@@ -72,6 +72,6 @@ export const typeDefs = gql`
 
     type Mutation {
         "Update the task"
-        updateTask(input: TaskInput!): Task!
+        update_task(input: TaskInput!): Task!
     }
 `;
