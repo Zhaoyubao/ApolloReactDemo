@@ -22,9 +22,9 @@ const TaskDetails = () => {
         const value = e.target.value;
         const options = {
           variables: {
-            taskId: +taskId,
             taskInput: {
-              [field]: field === 'assigneeId' ? +value : value
+              id: +taskId,
+              [field]: field === 'assignee_id' ? +value : value
             }
           }
         };
@@ -47,7 +47,7 @@ const TaskDetails = () => {
           </p>
           <p>
             <label>Assignee: </label>
-            <select value={assignee.id} onChange={handleChange('assigneeId')}>
+            <select value={assignee.id} onChange={handleChange('assignee_id')}>
               {assignees.map( ({id, first_name, last_name}) => 
                 <option key={id} value={id}>{`${first_name} ${last_name}`}</option>
               )}

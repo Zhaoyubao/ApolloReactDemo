@@ -58,8 +58,8 @@ export const GET_TASK = gql`
     ${accountFragment}
 `;
 export const UPDATE_TASK = gql`
-    mutation UpdateTask($taskId: Int!, $taskInput: TaskInput!) {
-        updateTask(id: $taskId, input: $taskInput) {
+    mutation UpdateTask($taskInput: TaskInput!) {
+        updateTask(input: $taskInput) {
             id
             status
             priority

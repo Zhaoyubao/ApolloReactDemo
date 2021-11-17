@@ -1,6 +1,29 @@
 import { gql } from 'apollo-server';
 
 export const typeDefs = gql`
+    type Account {
+        id: Int!
+        first_name: String
+        last_name: String
+    }
+
+    type Reservation {
+        id: Int!
+        customer_name: String
+        guest_count: Int
+        check_in_date: String
+        check_out_date: String
+        status_code: String
+        platform_code: String
+    }
+
+    type TaskItem {
+        id: Int!
+        item_type: String
+        code: String
+        amount: String
+    }
+
     "A task that the manager assign to a member"
     type Task {
         "The task's id"
@@ -12,20 +35,19 @@ export const typeDefs = gql`
         "The task's priority"
         priority: String
         "The task's assignee"
-        assignee: Account,
+        assignee: Account
         assignees: [Account!]!
+        todo_date: String
+        reservation: Reservation
+        task_items: [TaskItem!]!
     }
 
-    type Account {
-        id: Int!
-        first_name: String
-        last_name: String
-    } 
-
     input TaskInput {
+        id: Int!
         status: String
         priority: String
-        assigneeId: Int
+        todo_date: String
+        assignee_id: Int
     }
 
     type Query {
@@ -39,6 +61,6 @@ export const typeDefs = gql`
 
     type Mutation {
         "Update the task"
-        updateTask(id: Int!, input: TaskInput!): Task!
+        updateTask(input: TaskInput!): Task!
     }
 `;
