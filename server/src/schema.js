@@ -24,6 +24,14 @@ export const typeDefs = gql`
         amount: String
     }
 
+    type Company {
+        id: Int!
+        company_name: String
+        phone_number: String
+        email: String
+        cleaning_rules: String
+    }
+
     "A task that the manager assign to a member"
     type Task {
         "The task's id"
@@ -40,6 +48,8 @@ export const typeDefs = gql`
         todo_date: String
         reservation: Reservation
         task_items: [TaskItem!]!
+        company: Company
+        notes: String
     }
 
     input TaskInput {
@@ -47,6 +57,7 @@ export const typeDefs = gql`
         status: String
         priority: String
         todo_date: String
+        notes: String
         assignee_id: Int
     }
 

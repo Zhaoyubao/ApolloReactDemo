@@ -5,6 +5,7 @@ const TASKS = [
         type: 'CLEANING',
         priority: 'MEDIUM',
         todo_date: '2021-11-20 13:00:00',
+        notes: '',
         assignee_id: 3,
         company_id: 2,
         order_id: 1,
@@ -15,6 +16,7 @@ const TASKS = [
         type: 'CHECKOUT',
         priority: 'HIGH',
         todo_date: '2021-11-22 14:30:00',
+        notes: '',
         assignee_id: 1,
         company_id: 1,
         order_id: 1,
@@ -25,6 +27,7 @@ const TASKS = [
         type: 'CHECKIN',
         priority: 'LOW',
         todo_date: '2021-11-24 15:30:00',
+        notes: '',
         assignee_id: 2,
         company_id: 1,
         order_id: 1,
@@ -70,6 +73,16 @@ const RESERVATIONS = [
     },
 ];
 
+const COMPANYS = [
+    {
+        id: 1,
+        company_name: 'Company1',
+        phone_number: '1234567890',
+        email: 'company1@gmail.com',
+        cleaning_rules: 'All bed sheets should be replaced, the floor ......'
+    },
+];
+
 const TASKITEMS = [
     {
         id: 1,
@@ -91,5 +104,6 @@ export {
     TASKS,
     ACCOUNTS,
     RESERVATIONS,
+    COMPANYS,
     TASKITEMS,
 }; 

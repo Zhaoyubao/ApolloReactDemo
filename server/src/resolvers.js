@@ -1,4 +1,4 @@
-import { TASKS, ACCOUNTS, RESERVATIONS, TASKITEMS } from './mocks.js';
+import { TASKS, ACCOUNTS, RESERVATIONS, COMPANYS, TASKITEMS } from './mocks.js';
 
 export const resolvers = {
     Query: {
@@ -17,6 +17,7 @@ export const resolvers = {
         assignee: (task) => ACCOUNTS.find(assignee => assignee.id === task.assignee_id),
         assignees: (task) => ACCOUNTS.filter(assignee => assignee.company_id === task.company_id),
         reservation: (task) => RESERVATIONS.find(reservation => reservation.id === task.order_id),
+        company: (task) => COMPANYS.find(company => company.id === task.company_id),
         task_items: (task) => TASKITEMS.filter(item => item.task_id === task.id),
     }
 };
