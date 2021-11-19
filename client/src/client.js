@@ -47,11 +47,16 @@ export const GET_TASK = gql`
             status
             type
             priority
+            todo_date
+            notes
             assignee {
                 ...accountFields
             }
             assignees {
                 ...accountFields
+            }
+            company {
+                cleaning_rules
             }
         }
     }
@@ -59,10 +64,12 @@ export const GET_TASK = gql`
 `;
 export const UPDATE_TASK = gql`
     mutation UpdateTask($taskInput: TaskInput!) {
-        updateTask(input: $taskInput) {
+        update_task(input: $taskInput) {
             id
             status
             priority
+            todo_date
+            notes
             assignee {
                 id
             }

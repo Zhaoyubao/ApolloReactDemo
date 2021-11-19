@@ -45,7 +45,7 @@ export const typeDefs = gql`
         "The task's assignee"
         assignee: Account
         assignees: [Account!]!
-        todo_date: String
+        due_date: String
         reservation: Reservation
         task_items: [TaskItem!]!
         company: Company
@@ -56,7 +56,7 @@ export const typeDefs = gql`
         id: Int!
         status: String
         priority: String
-        todo_date: String
+        due_date: String
         notes: String
         assignee_id: Int
     }
