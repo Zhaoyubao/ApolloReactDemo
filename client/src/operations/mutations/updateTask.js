@@ -23,7 +23,7 @@ export const UPDATE_TASK = gql`
 export function useUpdateTask() {
   const prevFilter = useReactiveVar(filterVar);
   const [mutate, {data, error}] = useMutation(UPDATE_TASK, {
-    onCompleted: ({update_task}) => console.log("Mutation Result:", update_task),
+    onCompleted: ({updateTask}) => console.log("Mutation Result:", updateTask),
     update(cache, result, options) {
       const nextFilter = options.variables.taskInput?.assignee_id;
       if (nextFilter) {
@@ -35,10 +35,10 @@ export function useUpdateTask() {
         });
       }
     },
-    // refetchQueries({data: {update_task}}) {
+    // refetchQueries({data: {updateTask}}) {
     //   return [
     //     {query: FILTER_TASKS, variables: {filter: prevFilter}},
-    //     {query: FILTER_TASKS, variables: {filter: update_task.assignee_id}},
+    //     {query: FILTER_TASKS, variables: {filter: updateTask.assignee_id}},
     //   ];
     // }
   });
