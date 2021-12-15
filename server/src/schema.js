@@ -32,6 +32,13 @@ export const typeDefs = gql`
         cleaning_rules: String
     }
 
+    type File {
+        id: Int!
+        name: String
+        type: String
+        size: Int
+    }
+
     "A task that the manager assign to a member"
     type Task {
         "The task's id"
@@ -50,6 +57,13 @@ export const typeDefs = gql`
         task_items: [TaskItem!]!
         company: Company
         notes: String
+        files: [File!]!
+    }
+
+    input FileInput {
+        name: String
+        type: String
+        size: Int
     }
 
     input TaskInput {
@@ -59,6 +73,7 @@ export const typeDefs = gql`
         due_date: String
         notes: String
         assignee_id: Int
+        files: [FileInput!]
     }
 
     type Query {
@@ -66,12 +81,16 @@ export const typeDefs = gql`
         tasks: [Task!]! 
         "Get a single task by taskId"
         task(id: Int!): Task
+        filteredTasks(filter: Int!): [Task!]!
         "Get all accounts"
         accounts: [Account!]!
     }
 
     type Mutation {
         "Update the task"
-        update_task(input: TaskInput!): Task!
+        updateTask(input: TaskInput!): Task!
+        addFiles(id: Int!, files: [FileInput!]!): [File!]!
+        deleteFile(id: Int!): File!
+        updateTaskItem(id: Int!, amount: String): TaskItem!
     }
 `;

@@ -4,7 +4,7 @@ const TASKS = [
         status: 'TODO',
         type: 'CLEANING',
         priority: 'MEDIUM',
-        due_date: '2021-11-20 13:00:00',
+        due_date: '2021-12-18 13:00:00',
         notes: '',
         assignee_id: 3,
         company_id: 2,
@@ -15,7 +15,7 @@ const TASKS = [
         status: 'COMPLETED',
         type: 'CHECKOUT',
         priority: 'HIGH',
-        due_date: '2021-11-22 14:30:00',
+        due_date: '2021-12-21 14:30:00',
         notes: '',
         assignee_id: 1,
         company_id: 1,
@@ -26,7 +26,40 @@ const TASKS = [
         status: 'INPROGRESS',
         type: 'CHECKIN',
         priority: 'LOW',
-        due_date: '2021-11-24 15:30:00',
+        due_date: '2021-12-22 15:30:00',
+        notes: '',
+        assignee_id: 2,
+        company_id: 1,
+        order_id: 1,
+    },
+    {
+        id: 4,
+        status: 'INPROGRESS',
+        type: 'CLEANING',
+        priority: 'MEDIUM',
+        due_date: '2021-12-20 13:00:00',
+        notes: '',
+        assignee_id: 3,
+        company_id: 2,
+        order_id: 1,
+    },
+    {
+        id: 5,
+        status: 'TODO',
+        type: 'CHECKOUT',
+        priority: 'MEDIUM',
+        due_date: '2021-12-22 14:30:00',
+        notes: '',
+        assignee_id: 1,
+        company_id: 1,
+        order_id: 1,
+    },
+    {
+        id: 6,
+        status: 'TODO',
+        type: 'CHECKIN',
+        priority: 'MEDIUM',
+        due_date: '2021-12-24 15:30:00',
         notes: '',
         assignee_id: 2,
         company_id: 1,
@@ -37,26 +70,26 @@ const TASKS = [
 const ACCOUNTS = [
     {
         id: 1,
-        first_name: 'WEI',
-        last_name: 'WU',
+        first_name: 'TERRY',
+        last_name: 'WANG',
         company_id: 1
     },
     {
         id: 2,
-        first_name: 'JUNCI',
-        last_name: 'ZHAO',
+        first_name: 'ARTOUR',
+        last_name: 'TANG',
         company_id: 1
     },
     {
         id: 3,
-        first_name: 'YUBAO',
+        first_name: 'VICTOR',
         last_name: 'ZHAO',
         company_id: 2
     },
     {
         id: 4,
-        first_name: 'TERRY',
-        last_name: 'WANG',
+        first_name: 'YUBAO',
+        last_name: 'ZHAO',
         company_id: 2
     }
 ];
@@ -105,7 +138,30 @@ const TASKITEMS = [
         amount: '3',
         task_id: 1
     },
+    {
+        id: 3,
+        item_type: 'SUPPLY',
+        code: 'TOWEL',
+        amount: '3',
+        task_id: 2
+    },
+    {
+        id: 4,
+        item_type: 'SUPPLY',
+        code: 'PAPER',
+        amount: '2',
+        task_id: 2
+    },
+    {
+        id: 5,
+        item_type: 'SUPPLY',
+        code: 'BOTTLE',
+        amount: '2',
+        task_id: 3
+    },
 ];
+
+const FILES = [];
 
 export { 
     TASKS,
@@ -113,4 +169,5 @@ export {
     RESERVATIONS,
     COMPANYS,
     TASKITEMS,
+    FILES,
 }; 
